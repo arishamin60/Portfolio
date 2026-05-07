@@ -9,7 +9,7 @@
   },
   "scripts": {
     "dev": "cd client && vite --host",
-    "build": "vite build client/index.html",
+    "build": "vite build --root client",
     "start": "NODE_ENV=production node dist/index.js",
     "preview": "cd client && vite preview --host",
     "check": "cd client && tsc --noEmit",
