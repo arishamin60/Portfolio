@@ -93,7 +93,11 @@ const FORGE_BASE_URL =
 const MAPS_PROXY_URL = `${FORGE_BASE_URL}/v1/maps/proxy`;
 
 function loadMapScript() {
-  return new Promise(resolve => {
+  return new Promise((resolve, reject) => {
+    if (!API_KEY) {
+      reject(new Error("Missing VITE_FRONTEND_FORGE_API_KEY"));
+      return;
+    }
     const script = document.createElement("script");
     script.src = `${MAPS_PROXY_URL}/maps/api/js?key=${API_KEY}&v=weekly&libraries=marker,places,geocoding,geometry`;
     script.async = true;
@@ -104,6 +108,7 @@ function loadMapScript() {
     };
     script.onerror = () => {
       console.error("Failed to load Google Maps script");
+      reject(new Error("Failed to load Google Maps script"));
     };
     document.head.appendChild(script);
   });
@@ -146,7 +151,9 @@ export function MapView({
   });
 
   useEffect(() => {
-    init();
+    init().catch((error) => {
+      console.error("Map initialization failed", error);
+    });
   }, [init]);
 
   return (

@@ -2,11 +2,29 @@
   "outputDirectory": "dist/public",
   "installCommand": "pnpm install",
   "framework": "vite",
-  "env": {
-    "VITE_EMAILJS_PUBLIC_KEY": "itoTj5HfAZQ1WVpY2",
-    "VITE_EMAILJS_SERVICE_ID": "service_40az9md",
-    "VITE_EMAILJS_TEMPLATE_ID": "template_nq28gkm"
-  }
+  "headers": [
+    {
+      "source": "/(.*)",
+      "headers": [
+        {
+          "key": "X-Content-Type-Options",
+          "value": "nosniff"
+        },
+        {
+          "key": "X-Frame-Options",
+          "value": "DENY"
+        },
+        {
+          "key": "Referrer-Policy",
+          "value": "strict-origin-when-cross-origin"
+        },
+        {
+          "key": "Permissions-Policy",
+          "value": "camera=(), microphone=(), geolocation=(self)"
+        }
+      ]
+    }
+  ]
 }
 
   

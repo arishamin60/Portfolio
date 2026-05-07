@@ -179,7 +179,7 @@ export function Contact() {
           </motion.div>
 
           {/* Configuration Warning (Development Only) */}
-          {emailJSError && process.env.NODE_ENV === "development" && (
+          {emailJSError && import.meta.env.DEV && (
             <motion.div
               variants={itemVariants}
               className="mb-8 p-4 bg-amber-50 border border-amber-200 rounded-lg"

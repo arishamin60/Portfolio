@@ -33,7 +33,7 @@ class ErrorBoundary extends Component<Props, State> {
 
             <h2 className="text-xl mb-4">An unexpected error occurred.</h2>
 
-            {process.env.NODE_ENV === "development" && (
+            {import.meta.env.DEV && (
               <div className="p-4 w-full rounded bg-muted overflow-auto mb-6">
                 <p className="text-xs text-muted-foreground mb-2 font-semibold">Development Error Details:</p>
                 <pre className="text-sm text-muted-foreground whitespace-break-spaces">
@@ -42,7 +42,7 @@ class ErrorBoundary extends Component<Props, State> {
               </div>
             )}
 
-            {process.env.NODE_ENV !== "development" && (
+            {!import.meta.env.DEV && (
               <p className="text-sm text-muted-foreground mb-6 text-center">
                 Please try refreshing the page. If the problem persists, contact support.
               </p>
