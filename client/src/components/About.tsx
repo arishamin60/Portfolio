@@ -64,7 +64,7 @@ export function About() {
             >
               <div className="absolute inset-0 glass-heavy rounded-3xl overflow-hidden backdrop-blur-xl">
                 <img
-                  src="/manus-storage/ChatGPTImageMay6,2026,05_29_35PM_a8e4a15c.png"
+                  src="/profile-photo.png"
                   alt="Arish Amin"
                   className="w-full h-full object-cover"
                 />
