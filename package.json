@@ -9,7 +9,7 @@
   },
   "scripts": {
     "dev": "cd client && vite --host",
-    "build": "cd client && vite build && cd .. && esbuild server/index.ts --platform=node --packages=external --bundle --format=esm --outdir=dist",
+    "build": "cd client && vite build && cd .. && esbuild server/index.ts --platform=node --bundle --format=esm --outdir=dist --external:node_modules",
     "start": "NODE_ENV=production node dist/index.js",
     "preview": "cd client && vite preview --host",
     "check": "cd client && tsc --noEmit",
