@@ -4,8 +4,8 @@
   "installCommand": "pnpm install",
   "framework": "vite",
   "env": {
-    "VITE_EMAILJS_PUBLIC_KEY": "@emailjs_public_key",
-    "VITE_EMAILJS_SERVICE_ID": "@emailjs_service_id",
-    "VITE_EMAILJS_TEMPLATE_ID": "@emailjs_template_id"
+    "VITE_EMAILJS_PUBLIC_KEY": "itoTj5HfAZQ1WVpY2",
+    "VITE_EMAILJS_SERVICE_ID": "service_40az9md",
+    "VITE_EMAILJS_TEMPLATE_ID": "template_nq28gkm"
   }
 }
